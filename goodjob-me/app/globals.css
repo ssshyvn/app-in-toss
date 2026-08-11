@@ -25,7 +25,7 @@ button:focus-visible { outline: 3px solid #4c82ff; outline-offset: 3px; }
 .brand { border: 0; padding: 0; background: transparent; display: flex; align-items: center; gap: 9px; cursor: pointer; text-align: left; }
 .brand__seal { position: relative; width: 40px; height: 39px; border: 2px solid var(--ink); border-radius: 52% 52% 47% 47%; display: block; background: var(--yellow); transform: rotate(-5deg); box-shadow: 2px 2px 0 var(--ink), inset -4px -3px 0 rgba(230,158,23,.12); }
 .brand__seal::before { content: ""; position: absolute; width: 13px; height: 12px; left: 12px; top: -8px; background: var(--yellow); border: 2px solid var(--ink); border-bottom: 0; border-radius: 62% 38% 48% 52%; transform: rotate(-4deg); }
-.brand__seal::after { content: ""; position: absolute; width: 5px; height: 3px; left: 5px; top: 23px; border-radius: 50%; background: rgba(241,137,104,.42); box-shadow: 26px 0 0 rgba(241,137,104,.42); }
+.brand__seal::after { content: ""; position: absolute; width: 5px; height: 3px; left: 4px; top: 22px; border-radius: 50%; background: rgba(241,137,104,.42); box-shadow: 24px 0 0 rgba(241,137,104,.42); }
 .brand__eye { position: absolute; width: 4px; height: 5px; top: 14px; border-radius: 50%; background: var(--ink); }
 .brand__eye--left { left: 10px; }
 .brand__eye--right { right: 10px; }
@@ -76,22 +76,23 @@ button:focus-visible { outline: 3px solid #4c82ff; outline-offset: 3px; }
 
 .officer { position: absolute; width: 164px; height: 205px; left: 50%; bottom: 1px; transform: translateX(-58%); }
 .officer__figure { position: absolute; inset: 0; width: 164px; height: 205px; transform-origin: top left; }
-.officer__hair { position: absolute; z-index: 3; width: 25px; height: 23px; left: 68px; top: 2px; background: #ffd956; border: 2px solid var(--ink); border-radius: 60% 40% 48% 52%; transform: rotate(-5deg); }
+.officer__hair { position: absolute; z-index: 6; width: 28px; height: 28px; left: 65px; top: -5px; background: var(--yellow); border: 2.5px solid var(--ink); border-bottom: 0; border-radius: 67% 38% 48% 52%; transform: rotate(-4deg); }
 .officer__hair::before, .officer__hair::after { display: none; }
-.officer__hair-bridge { position: absolute; z-index: 5; width: 20px; height: 9px; left: 71px; top: 12px; background: #ffd956; border-radius: 50%; pointer-events: none; }
+.officer__hair-bridge { position: absolute; z-index: 5; width: 20px; height: 14px; left: 69px; top: 10px; background: var(--yellow); border-radius: 50%; pointer-events: none; }
 .officer__face { position: absolute; z-index: 4; width: 120px; height: 118px; left: 22px; top: 15px; background: #ffd956; border: 2.5px solid var(--ink); border-radius: 50% 50% 48% 48% / 47% 47% 53% 53%; box-shadow: inset -7px -6px 0 rgba(230,158,23,.1); }
 .officer__face::before { content: ""; position: absolute; width: 14px; height: 9px; left: 16px; top: 66px; border-radius: 50%; background: rgba(234,83,65,.5); box-shadow: 74px 0 0 rgba(234,83,65,.5); }
 .officer__face::after { content: ""; position: absolute; width: 16px; height: 12px; left: 50px; top: 58px; border-radius: 50%; background: #f09d47; clip-path: polygon(0 30%,100% 0,62% 100%); }
 .officer__eye { position: absolute; width: 6px; height: 7px; border-radius: 50%; background: var(--ink); top: 49px; }
 .officer__eye--left { left: 31px; } .officer__eye--right { right: 31px; }
-.officer__mouth { display: block; position: absolute; width: 13px; height: 0; left: 52px; top: 80px; border-top: 2px solid var(--ink); }
+.officer__mouth { display: block; position: absolute; width: 25px; height: 0; left: 46px; top: 83px; border-top: 2px solid var(--ink); }
 .officer__mouth--happy { width: 20px; height: 10px; left: 48px; top: 75px; border: 0; border-bottom: 2.5px solid var(--ink); border-radius: 0 0 50% 50%; }
-.officer__body { position: absolute; z-index: 1; width: 136px; height: 94px; left: 14px; bottom: 0; border: 2.5px solid var(--ink); border-radius: 43px 43px 16px 16px; background: linear-gradient(90deg, #eef2f6 0 8%, #fff 8% 92%, #eef2f6 92%); overflow: hidden; }
+.officer__body { position: absolute; z-index: 1; width: 136px; height: 94px; left: 14px; bottom: 0; border: 2.5px solid var(--ink); border-radius: 43px 43px 1px 1px; background: linear-gradient(90deg, #eef2f6 0 8%, #fff 8% 92%, #eef2f6 92%); overflow: hidden; }
 .officer__body::after { content: ""; position: absolute; z-index: 1; left: 67px; top: 36px; width: 1.5px; height: 58px; background: #d9dee5; }
-.officer__collar { position: absolute; z-index: 4; top: -1px; width: 55px; height: 39px; background: #fff; border: 1.5px solid #cbd2da; border-top: 0; }
-.officer__collar--left { left: 13px; clip-path: polygon(0 0,100% 0,74% 100%,39% 57%); }
-.officer__collar--right { right: 13px; clip-path: polygon(0 0,100% 0,61% 57%,26% 100%); }
-.officer__tie { position: absolute; z-index: 3; width: 30px; height: 71px; left: 53px; top: 14px; background: #193451; clip-path: polygon(28% 0,72% 0,63% 17%,83% 100%,17% 100%,37% 17%); }
+.officer__collar { position: absolute; z-index: 4; top: -2px; width: 68px; height: 43px; background: var(--ink); border: 0px; }
+.officer__collar::after { content: ""; position: absolute; inset: 4px; background: #fff; clip-path: inherit; }
+.officer__collar--left { left: 10px; clip-path: polygon(0 0,100% 0,74% 25%,52% 100%, 10% 0%); }
+.officer__collar--right { right: 13px; clip-path: polygon(0 0,100% 0,100% 0%,48% 100%, 26% 25%); }
+.officer__tie { position: absolute; z-index: 3; width: 30px; height: 71px; left: 51px; top: 15px; background: #193451; clip-path: polygon(28% 0,72% 0,63% 17%,83% 100%,17% 100%,37% 17%); }
 .officer__tie::after { content: ""; position: absolute; left: 9px; top: 7px; width: 12px; height: 12px; background: rgba(255,255,255,.16); transform: rotate(45deg); }
 .officer__body span { position: absolute; z-index: 5; right: 9px; top: 39px; background: #fff; border: 1px solid var(--ink); padding: 4px; font-size: 8px; font-weight: 900; transform: rotate(2deg); }
 .officer--small { position: relative; left: auto; bottom: auto; width: 71px; height: 89px; flex: 0 0 71px; transform: none; }
@@ -131,8 +132,34 @@ button:focus-visible { outline: 3px solid #4c82ff; outline-offset: 3px; }
 .action-card--completed i { background: var(--green); }
 .result-screen { min-height: calc(100dvh - 78px); padding: 21px 23px 34px; text-align: center; position: relative; overflow: hidden; background: radial-gradient(circle at 50% 25%, #fffdf1 0 16%, transparent 50%); animation: stageReveal 1.15s ease-out both; }
 .view-result .topbar { display: none; }
-.result-screen--card { min-height: 100dvh; padding: 0 0 34px; background: var(--cream); }
-.result-card-canvas { position: relative; z-index: 3; display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; background: var(--cream); }
+.result-screen--card { min-height: 100dvh; padding: 0 0 34px; background: var(--cream); display: flex; flex-direction: column; align-items: center; }
+.result-screen--card::before, .result-screen--card::after { display: none; }
+.achievement-card { --achievement-color: var(--orange); container-type: inline-size; position: relative; z-index: 3; box-sizing: border-box; display: flex; flex-direction: column; align-items: center; width: 100%; max-width: 520px; aspect-ratio: 4 / 5; padding: 14px 24px 18px; overflow: hidden; color: var(--ink); background: radial-gradient(circle at 50% 26%, #fffdf1 0 17%, rgba(255,253,241,.72) 36%, transparent 63%), var(--cream); isolation: isolate; }
+.achievement-card__grain { position: absolute; inset: 0; z-index: -1; opacity: .18; pointer-events: none; background-image: radial-gradient(rgba(23,23,19,.22) .45px, transparent .7px); background-size: 5px 5px; mix-blend-mode: multiply; }
+.achievement-card__header { width: 100%; min-height: 43px; display: flex; align-items: flex-start; }
+.achievement-card__brand { cursor: default; }
+.achievement-card__rarity { margin: 1px 0 1px; color: #996d19; font-size: clamp(11px, 3.1cqw, 16px); font-weight: 1000; letter-spacing: .045em; }
+.achievement-card__medal { width: 100%; height: clamp(120px, 31cqw, 158px); display: grid; place-items: center; }
+.achievement-card .badge--large { width: 150px; height: 160px; margin: 0; }
+.achievement-card .badge--large .badge__rays { width: 140px; height: 140px; }
+.achievement-card .badge--large .badge__ring { width: 104px; height: 104px; border-width: 5px; box-shadow: inset 0 0 0 6px #ffe88c, 0 0 0 3px #d38a14, 0 10px 18px rgba(211,138,20,.18); }
+.achievement-card .badge--large .badge__ring b { font-size: 36px; }
+.achievement-card .badge--large .badge__ribbon { bottom: 9px; padding: 6px 15px; font-size: 8px; }
+.achievement-card__info { width: 100%; text-align: center; }
+.achievement-card__info > span { display: inline-block; padding-bottom: 3px; color: var(--muted); border-bottom: 1px solid var(--line); font-size: clamp(9px, 2.4cqw, 12px); font-weight: 800; }
+.achievement-card__info h1 { margin: 6px auto 4px; max-width: 96%; font-size: clamp(21px, 6.1cqw, 31px); line-height: 1.14; letter-spacing: -.065em; font-weight: 1000; text-wrap: balance; }
+.achievement-card__info p { margin: 0; color: #5b7569; font-size: clamp(9px, 2.4cqw, 12px); font-weight: 900; }
+.achievement-card__info p b { color: var(--green); }
+.achievement-card__official-note { box-sizing: border-box; width: 100%; min-height: clamp(88px, 23cqw, 114px); margin: 8px 0 7px; padding: 6px 10px 6px 6px; flex: 0 0 auto; }
+.achievement-card__official-note .officer--small { width: 62px; height: 78px; flex-basis: 62px; }
+.achievement-card__official-note .officer--small .officer__figure { transform: scale(.38); }
+.achievement-card__official-note p { margin-left: 6px; font-size: clamp(9px, 2.4cqw, 12px); line-height: 1.55; }
+.achievement-card__official-note p span { font-size: clamp(7px, 1.8cqw, 9px); }
+.achievement-card__footer { margin-top: auto; text-align: center; color: var(--muted); }
+.achievement-card__footer p { margin: 0 0 3px; font-size: clamp(9px, 2.4cqw, 12px); font-weight: 850; }
+.achievement-card__footer p span { color: var(--green); font-size: 1.15em; }
+.achievement-card__footer small { font-size: clamp(7px, 1.8cqw, 9px); font-weight: 700; }
+.achievement-card--export, .achievement-card--export * { animation: none !important; transition: none !important; }
 .result-screen--card .result-actions { margin: 12px 23px 0; }
 .result-screen--card .card-save-button { width: calc(100% - 46px); margin: 9px 23px 0; }
 @keyframes stageReveal { 0% { background-color: #171713; } 42% { background-color: #6d5b31; } 100% { background-color: transparent; } }
@@ -247,3 +274,4 @@ button:focus-visible { outline: 3px solid #4c82ff; outline-offset: 3px; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; }
 }
+

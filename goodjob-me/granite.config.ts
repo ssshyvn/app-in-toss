@@ -5,7 +5,7 @@ export default defineConfig({
   brand: {
     displayName: "오늘도 대단한 척",
     primaryColor: "#FFD64A",
-    icon: "https://oneuldo-awesome.ssshyvn.chatgpt.site/og.png",
+    icon: process.env.AIT_BRAND_ICON_URL ?? "https://oneuldo-awesome.ssshyvn.chatgpt.site/app-icon.png",
   },
   web: {
     host: "localhost",
@@ -25,7 +25,7 @@ export default defineConfig({
     allowsBackForwardNavigationGestures: false,
   },
   navigationBar: {
-    withBackButton: false,
+    withBackButton: true,
     withHomeButton: true,
   },
 });

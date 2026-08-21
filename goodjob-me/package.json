@@ -1,5 +1,5 @@
 {
-  "name": "awesome-today",
+  "name": "goodjob-me",
   "version": "0.1.0",
   "private": true,
   "engines": {
@@ -14,7 +14,7 @@
     "ait:build": "ait build",
     "start": "vinext start",
     "test": "pnpm run build && node --test tests/rendered-html.test.mjs",
-    "lint": "eslint . --ignore-pattern dist --ignore-pattern .next",
+    "lint": "eslint app ait granite.config.ts vite.ait.config.ts",
     "db:generate": "drizzle-kit generate"
   },
   "dependencies": {

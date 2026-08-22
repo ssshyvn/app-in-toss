@@ -38,6 +38,7 @@ yarn-error.log*
 /ait-dist/
 /.granite/
 *.tsbuildinfo
+*.ait
 /.wrangler/
 /outputs/
 /work/

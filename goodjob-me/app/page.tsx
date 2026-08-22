@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
-import { readAppValue, shareAchievementImage, triggerAchievementHaptic, writeAppValue } from "./apps-in-toss";
+import { readAppValue, saveAchievementImage, shareAchievementImage, triggerAchievementHaptic, writeAppValue } from "./apps-in-toss";
 import { createAchievementCard } from "./share-card";
 
 type Rarity = "일반" | "희귀" | "영웅" | "전설" | "신화";
@@ -189,7 +189,7 @@ export default function Home() {
   const [soundOn, setSoundOn] = useState(true);
   const [category, setCategory] = useState<"전체" | Category>("전체");
   const [notice, setNotice] = useState("");
-  const [cardBusy, setCardBusy] = useState<"share" | null>(null);
+  const [cardBusy, setCardBusy] = useState<"share" | "save" | null>(null);
   const [secretQueue, setSecretQueue] = useState<Achievement[]>([]);
   const [judgingStep, setJudgingStep] = useState(0);
   const initialized = useRef(false);
@@ -401,6 +401,20 @@ export default function Home() {
     window.setTimeout(() => setNotice(""), 2400);
   };
 
+  const handleSaveCard = async () => {
+    setCardBusy("save");
+    try {
+      const card = await createAchievementCard({ ...selected, issuedAt }, resultCard.current);
+      const method = await saveAchievementImage(card.dataUrl, card.fileName);
+      setNotice(method === "toss" ? "업적 카드를 기기에 저장했습니다." : "업적 카드 다운로드를 시작했습니다.");
+    } catch {
+      setNotice("카드를 저장하지 못했습니다. 잠시 후 다시 시도해 주세요.");
+    } finally {
+      setCardBusy(null);
+    }
+    window.setTimeout(() => setNotice(""), 2400);
+  };
+
   const todayIds = dailyAchievements.dateKey === localDateKey() ? dailyAchievements.ids : [];
   const filtered = useMemo(() => category === "전체" ? catalogAchievements : catalogAchievements.filter((item) => item.category === category), [category]);
   const progress = Math.round((unlocked.length / catalogAchievements.length) * 100);
@@ -518,6 +532,7 @@ export default function Home() {
             <button className="secondary-button" onClick={handleShare} disabled={cardBusy !== null || !resultCardReady}>{!resultCardReady ? "카드 준비 중…" : cardBusy === "share" ? "카드 제작 중…" : "친구에게 자랑하기"}</button>
             <button className="secondary-button secondary-button--more" onClick={() => { setChainStartedAt(Date.now()); navigateTo("pick"); }}>하나 더 달성하기</button>
           </div>
+          <button className="card-save-button" onClick={handleSaveCard} disabled={cardBusy !== null || !resultCardReady}>{!resultCardReady ? "카드 준비 중…" : cardBusy === "save" ? "고화질 카드를 만드는 중…" : "PNG 카드 이미지 저장 ↓"}</button>
         </section>
       )}
 

@@ -14,10 +14,10 @@ export type AchievementCardFile = {
   fileName: string;
 };
 
-const WIDTH = 1080;
-const HEIGHT = 1350;
-const EXPORT_CSS_WIDTH = 540;
-const EXPORT_CSS_HEIGHT = 675;
+const WIDTH = 1440;
+const HEIGHT = 1920;
+const EXPORT_CSS_WIDTH = 420;
+const EXPORT_CSS_HEIGHT = 560;
 const XHTML_NAMESPACE = "http://www.w3.org/1999/xhtml";
 
 function canvasToBlob(canvas: HTMLCanvasElement) {
